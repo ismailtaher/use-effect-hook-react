@@ -3,7 +3,7 @@ import SearchItem from "./SearchItem";
 import AddItem from "./AddItem";
 import Content from "./Content";
 import Footer from "./Footer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   const [items, setItems] = useState(
@@ -13,6 +13,10 @@ function App() {
   const [search, setSearch] = useState("");
 
   const [newItem, setNewItem] = useState("");
+
+  useEffect(() => {
+    console.log("updating items state");
+  }, [items]);
 
   const setAndSaveItems = (newItems) => {
     setItems(newItems);
