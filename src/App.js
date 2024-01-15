@@ -14,9 +14,13 @@ function App() {
 
   const [newItem, setNewItem] = useState("");
 
+  console.log("before useEffect");
+
   useEffect(() => {
-    console.log("updating items state");
+    console.log("Inside useEffect");
   }, [items]);
+
+  console.log("after useEffect");
 
   const setAndSaveItems = (newItems) => {
     setItems(newItems);
